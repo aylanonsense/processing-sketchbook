@@ -20,7 +20,7 @@ void reset() {
 
 void draw() {
 	noStroke();
-    fill(255, 255, 255, 30);
+    fill(255, 255, 255, 70);
     rect(0, 0, WIDTH, HEIGHT);
 
 	for(int i = 0; i < MAX_DOT_DRAWERS; i++) {
@@ -41,10 +41,10 @@ void mousePressed() {
 //classes
 float MIN_MOVE_SPEED = 0.25;
 float MAX_MOVE_SPEED = 1.75;
-float MAX_ROTATE_SPEED = 4.0;
-float IDEAL_DIST = 35;
-float FACE_SAME_DIR_STRENGTH = 6;
-float BE_AT_IDEAL_DIST_STRENGTH = 6;
+float MAX_ROTATE_SPEED = 75.0;
+float IDEAL_DIST = 1;
+float FACE_SAME_DIR_STRENGTH = 10;
+float BE_AT_IDEAL_DIST_STRENGTH = 30;
 class DotDrawer {
 	float x;
 	float y;
@@ -69,7 +69,7 @@ class DotDrawer {
 		float squareDist = distX * distX + distY * distY;
 
 		//the closer another DotDrawer is, the more influence it has over the DotDrawer
-		float influence = 1 - squareDist / (WIDTH * WIDTH / (15 * 15) + HEIGHT * HEIGHT / (15 * 15));
+		float influence = 1 - squareDist / (WIDTH * WIDTH / (8 * 8) + HEIGHT * HEIGHT / (8 * 8));
 		if(influence > 0) {
 			//DotDrawers will align to face the same direction
 			float dirDiff = dir - other.dir;
