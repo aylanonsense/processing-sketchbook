@@ -1,10 +1,10 @@
 //setup
 int MAX_DOT_DRAWERS = 1000;
-DotDrawers[] dotDrawers;
+DotDrawer[] dotDrawers;
 
 void setup() {
 	size(800, 600, P3D);
-	dotDrawers = new DotDrawers[MAX_DOT_DRAWERS];
+	dotDrawers = new DotDrawer[MAX_DOT_DRAWERS];
 	reset();
 }
 
@@ -12,7 +12,7 @@ void setup() {
 void reset() {
 	background(255);
 	for(int i = 0; i < MAX_DOT_DRAWERS; i++) {
-		dotDrawers[i] = new DotDrawers(400, 300);
+		dotDrawers[i] = new DotDrawer(400, 300);
 	}
 }
 
@@ -27,14 +27,14 @@ void mousePressed() {
 }
 
 //classes
-class DotDrawers {
+class DotDrawer {
 	float x;
 	float y;
 	float dir;
 	float moveSpeed;
 	float rotateSpeed;
 
-	DotDrawers(startingX, startingY) {
+	DotDrawer(startingX, startingY) {
 		x = startingX;
 		y = startingY;
 		dir = radians(random(0.0, 360.0));
