@@ -1,0 +1,45 @@
+<html>
+	<head>
+		<title>processing sketchbook</title>
+		<script src="/processing.js"></script> 
+		<style>
+			body {
+				margin: 0;
+				padding: 0;
+				background-color: #eee;
+			}
+			canvas {
+				margin: 10px auto;
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<label> Load sketch:
+			<select id="load-sketch-drop-down" onchange="redirect()">
+				<option value="blot">Blot</option>
+				<option value="redblot">Red Blot</option>
+			</select>
+		</label>
+		<script type="text/javascript">
+			//extract sketch name from the querystring
+			var regexResults = (new RegExp("[\\?&]sketch=([^&#]*)")).exec(location.search);
+			var sketchName = (regexResults ? regexResults[1] : "");
+			if(!sketchName.length) { sketchName = "blot"; }
+
+			//create the processing.js canvas
+			var canvas = document.createElement("canvas");
+			canvas.setAttribute("data-processing-sources", "/sketches/" + sketchName + ".pde");
+			document.body.appendChild(canvas);
+
+			//set the drop down to the correct value
+			var dropDown = document.getElementById("load-sketch-drop-down");
+			dropDown.value = sketchName;
+
+			//when a new value is selected from the drop down, redirect with the new querystring
+			function redirect() {
+				window.location.href = "/?sketch=" + dropDown.value;
+			}
+		</script>
+	</body>
+</html>
