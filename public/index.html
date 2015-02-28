@@ -4,8 +4,6 @@
 		<script src="/processing.js"></script> 
 		<style>
 			body {
-				margin: 0;
-				padding: 0;
 				background-color: #eee;
 			}
 			canvas {
@@ -17,15 +15,15 @@
 	<body>
 		<label> Load sketch:
 			<select id="load-sketch-drop-down" onchange="redirect()">
-				<option value="blot">Blot</option>
-				<option value="redblot">Red Blot</option>
+				<option>01.blot</option>
+				<option>02.randomwalkers</option>
 			</select>
 		</label>
 		<script type="text/javascript">
 			//extract sketch name from the querystring
 			var regexResults = (new RegExp("[\\?&]sketch=([^&#]*)")).exec(location.search);
 			var sketchName = (regexResults ? regexResults[1] : "");
-			if(!sketchName.length) { sketchName = "blot"; }
+			if(!sketchName.length) { sketchName = "01.blot"; }
 
 			//create the processing.js canvas
 			var canvas = document.createElement("canvas");
