@@ -1,7 +1,7 @@
 //setup
 int MAX_DOT_DRAWERS = 500;
-int WIDTH = 800;
-int HEIGHT = 600;
+int WIDTH = 450;
+int HEIGHT = 450;
 DotDrawer[] dotDrawers;
 
 void setup() {

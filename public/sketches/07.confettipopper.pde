@@ -3,7 +3,7 @@ int NUM_CONFETTI_PIECES = 100;
 ConfettiStrand[] confetti;
 
 void setup() {
-	size(800, 600, P3D);
+	size(450, 450, P3D);
 	confetti = new ConfettiStrand[NUM_CONFETTI_PIECES];
 	reset();
 }

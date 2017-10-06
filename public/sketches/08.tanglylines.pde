@@ -3,7 +3,7 @@ int MAX_DOT_DRAWERS = 50;
 DotDrawer[] dotDrawers;
 
 void setup() {
-	size(800, 600, P3D);
+	size(450, 450, P3D);
 	dotDrawers = new DotDrawer[MAX_DOT_DRAWERS];
 	reset();
 }
@@ -12,7 +12,7 @@ void setup() {
 void reset() {
 	background(255);
 	for(int i = 0; i < MAX_DOT_DRAWERS; i++) {
-		dotDrawers[i] = new DotDrawer(400, 300);
+		dotDrawers[i] = new DotDrawer(225, 225);
 	}
 }
 

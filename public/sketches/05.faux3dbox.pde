@@ -1,7 +1,7 @@
 //constants
 int NUM_BOXES = 1;
-int WIDTH = 800;
-int HEIGHT = 600;
+int WIDTH = 450;
+int HEIGHT = 450;
 float PYTHAGOREAN_CONST = 1 / sqrt(2);
 
 //cache math operations

@@ -12,7 +12,7 @@ float sinViewAngle;
 Box[] boxes;
 
 void setup() {
-	size(800, 600);
+	size(450, 450);
 	boxes = new Box[NUM_BOXES];
 	reset();
 }
